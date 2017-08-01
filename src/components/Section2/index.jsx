@@ -7,7 +7,8 @@ class Section2 extends React.Component {
 	scroll(event) {
 		Velocity(document.getElementById(event), "scroll", {
 			duration: 1000,
-			easing: "easeInBack"
+			easing: "easeInBack",
+			offset: -10
 		});
 	}
 	render() {
@@ -20,12 +21,6 @@ class Section2 extends React.Component {
 					name="arrow down"
 				/>
 				<Skills />
-				<Icon
-					id="icon"
-					onClick={this.scroll.bind(this, 'skills-wrapper')}
-					className="section2-arrow-icon arrow3"
-					name="arrow down"
-				/>
 				<Icon
 					id="icon"
 					onClick={this.scroll.bind(this, 'section1-wrapper')}

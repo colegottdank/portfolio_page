@@ -71,7 +71,7 @@ const RightHalfBottomHalf = () =>
 			<h1>My specialities</h1>
 			<h3>&lt;/h1&gt;</h3>
 
-			<hr noshade />
+			<hr />
 			<p>
 				I specialize in crafting and optimizing all types of eCommerce
 				websites. Crafting the highest-quality website the first time

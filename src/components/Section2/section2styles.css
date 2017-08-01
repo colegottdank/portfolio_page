@@ -1,7 +1,7 @@
 /** Fonts **/
 /** Colors **/
 .section2-wrapper {
-  background-color: black;
+  background-color: lightgreen;
   height: 56em;
   width: 100%;
   color: white;
@@ -52,7 +52,7 @@
     margin-left: .15em !important; }
     .section2-wrapper .section2-arrow-icon:hover {
       cursor: pointer;
-      color: lightgrey; }
+      color: #0082af; }
   .section2-wrapper .skills-wrapper {
     display: flex;
     justify-content: center;
@@ -65,12 +65,12 @@
       padding: 1em;
       text-align: center;
       color: black;
-      background-color: white;
-      transition: .35s; }
+      transition: border-radius .35s;
+      border: 10px solid lightgreen; }
       .section2-wrapper .skills-wrapper .skill-div:hover {
-        opacity: 1;
-        border-radius: 30px;
-        transition: .35s; }
+        border-radius: 45px;
+        transition: .35s;
+        color: white; }
     .section2-wrapper .skills-wrapper .arrow2 {
       color: white;
       align-self: left;
@@ -89,22 +89,22 @@
         height: 50%;
         width: 100%;
         padding: 1em;
-        border-right: 4px solid black;
-        border-bottom: 4px solid black; }
+        background-color: #ad84ca; }
         .section2-wrapper .skills-wrapper .skills-wrapper-div1 .skills-div:hover {
-          background-color: #ad84ca; }
+          background-color: #9C77B6; }
       .section2-wrapper .skills-wrapper .skills-wrapper-div1 .skills-div2 {
         height: 50%;
         width: 100%;
         padding: 1em;
-        border-right: 4px solid black; }
+        background-color: #fdbc33; }
         .section2-wrapper .skills-wrapper .skills-wrapper-div1 .skills-div2:hover {
-          background-color: #fdbc33; }
+          background-color: #E4A92E; }
     .section2-wrapper .skills-wrapper .skills-div3 {
       height: 35em;
-      width: 40em; }
+      width: 40em;
+      background-color: #7fe3ff; }
       .section2-wrapper .skills-wrapper .skills-div3:hover {
-        background-color: #7fe3ff; }
+        background-color: #72CCE5; }
     .section2-wrapper .skills-wrapper .skills-wrapper-div2 {
       display: flex;
       flex-direction: column;
@@ -118,16 +118,15 @@
         height: 100%;
         width: 100%; }
         .section2-wrapper .skills-wrapper .skills-wrapper-div2 .skills-wrapper-div3 .skills-div4 {
-          border: 4px solid black;
-          border-top: none; }
+          background-color: #ff733f; }
           .section2-wrapper .skills-wrapper .skills-wrapper-div2 .skills-wrapper-div3 .skills-div4:hover {
-            background-color: #ff733f; }
+            background-color: #E56739; }
         .section2-wrapper .skills-wrapper .skills-wrapper-div2 .skills-wrapper-div3 .skills-div5 {
-          border-bottom: 4px solid black; }
+          background-color: pink; }
           .section2-wrapper .skills-wrapper .skills-wrapper-div2 .skills-wrapper-div3 .skills-div5:hover {
-            background-color: pink; }
+            background-color: #E5ADB7; }
       .section2-wrapper .skills-wrapper .skills-wrapper-div2 .skills-div6 {
         width: 100%;
-        border-left: 4px solid black; }
+        background-color: #44b1e1; }
         .section2-wrapper .skills-wrapper .skills-wrapper-div2 .skills-div6:hover {
-          background-color: lightgreen; }
+          background-color: #3D9FCA; }

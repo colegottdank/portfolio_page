@@ -45,11 +45,13 @@ $section1-height: 45em;
             justify-content: center;
             align-items: center;
             width: 80%;
-            height: 40%;
+            height: 45%;
             color: black;
 
+            @include angle(after, false, 5deg);
+
             &:hover {
-                background-color: $primary;
+                background-color: #ff733f;
                 color: white;
 
                 & hr {
@@ -101,12 +103,12 @@ $section1-height: 45em;
             justify-content: center;
             align-items: center;
             width: 80%;
-            height: 40%;
+            height: 45%;
             color: black;
             z-index: 2 !important;
 
             &:hover {
-                background-color: $primary;
+                background-color: #ff733f;
                 color: white;
 
                 & hr {
