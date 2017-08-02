@@ -2,26 +2,17 @@ import React from "react";
 import "./section1styles.css";
 import "semantic-ui-css/semantic.min.css";
 import img from "../../images/selfies/ColeGottdank_copy.png";
-import { VelocityComponent, VelocityTransitionGroup } from "velocity-react";
 import { Icon } from "semantic-ui-react";
 
 /*
 * Section1 contains both LeftHalf and RightHalf
 */
 const Section1 = () =>
-	<section className="section1-wrapper">
-		<LeftHalf />
-		<VelocityTransitionGroup
-			enter={{
-				animation: "slideDown",
-				duration: "600",
-				delay: "500"
-			}}
-			style={{ height: "100%" }}
-			runOnMount={true}
-		>
+	<section className="section1-wrapper" id="landing">
+		<div className="content-wrapper">
+			<LeftHalf />
 			<RightHalf />
-		</VelocityTransitionGroup>
+		</div>
 	</section>;
 
 /*
@@ -29,7 +20,10 @@ const Section1 = () =>
 */
 const LeftHalf = () =>
 	<section className="lefthalf-wrapper">
-		<img src={img} alt="Cartoon Selfie" />
+		<img
+			src={img}
+			alt="Cartoon Selfie"
+		/>
 	</section>;
 
 /*
@@ -51,7 +45,7 @@ const RightHalfTopHalf = () =>
 			<h1>Who am I?</h1>
 			<h3>&lt;/h1&gt;</h3>
 
-			<hr noshade />
+			<hr />
 			<p>
 				I'm a frontend developer who prides myself on my ability to
 				craft high-quality, modular, and scalable React.js code

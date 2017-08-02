@@ -4,29 +4,38 @@ import Velocity from "velocity-animate";
 import "./section2styles.css";
 
 class Section2 extends React.Component {
-	scroll(event) {
+	scroll(event, offset=0) {
 		Velocity(document.getElementById(event), "scroll", {
 			duration: 1000,
 			easing: "easeInBack",
-			offset: -10
+			offset: offset
 		});
 	}
 	render() {
 		return (
-			<section className="section2-wrapper" id="section2">
+			<section className="section2-wrapper">
+			<div className="content-wrapper">
 				<Icon
 					id="icon"
-					onClick={this.scroll.bind(this, 'skills-wrapper')}
-					className="section2-arrow-icon"
+					onClick={this.scroll.bind(this, "myexpertise", -100)}
+					className="section2-arrow-icon arrow1"
 					name="arrow down"
 				/>
 				<Skills />
 				<Icon
 					id="icon"
-					onClick={this.scroll.bind(this, 'section1-wrapper')}
+					className="section2-arrow-icon arrow2"
+					onClick={this.scroll.bind(this, "landing", -100)}
+					name="arrow up"
+				/>
+				<br />
+				<Icon
+					id="icon"
+					onClick={this.scroll.bind(this, "mywork")}
 					className="section2-arrow-icon arrow3"
 					name="arrow down"
 				/>
+				</div>
 			</section>
 		);
 	}
@@ -34,8 +43,8 @@ class Section2 extends React.Component {
 
 const skills = [
 	{
-		name: "Production Scale Web Development",
-		desc: "As a React.js programmer, I'm able to craft"
+		name: "Production scale web development",
+		desc: "As a React.js programmer , I'm able to craft"
 	},
 	{
 		name: "eCommerce",
@@ -68,33 +77,33 @@ const skills = [
 ];
 
 const Skills = () =>
-	<section className="skills-wrapper" id="skills-wrapper">
-		<div className="allskills-wrapper-div">
+	<section className="skills-wrapper">
+		<div className="allskills-wrapper-div" id="myexpertise">
 			<div className="skills-wrapper-div1">
 				<div className="skills-div skill-div">
-					<h1>
+					<h1 className="skills-h1">
 						{skills[0].name}
 					</h1>
-					<p>
+					<p className="skills-p">
 						{skills[0].desc}
 					</p>
 				</div>
 
 				<div className="skills-div2 skill-div">
-					<h1>
+					<h1 className="skills-h1">
 						{skills[1].name}
 					</h1>
-					<p>
+					<p className="skills-p">
 						{skills[2].desc}
 					</p>
 				</div>
 			</div>
 
 			<div className="skills-div3 skill-div">
-				<h1>
+				<h1 className="skills-h1">
 					{skills[3].name}
 				</h1>
-				<p>
+				<p className="skills-p">
 					{skills[3].desc}
 				</p>
 			</div>
@@ -102,38 +111,33 @@ const Skills = () =>
 			<div className="skills-wrapper-div2">
 				<div className="skills-wrapper-div3">
 					<div className="skills-div4 skill-div">
-						<h1>
+						<h1 className="skills-h1">
 							{skills[4].name}
 						</h1>
-						<p>
+						<p className="skills-p">
 							{skills[4].desc}
 						</p>
 					</div>
 
 					<div className="skills-div5 skill-div">
-						<h1>
+						<h1 className="skills-h1">
 							{skills[5].name}
 						</h1>
-						<p>
+						<p className="skills-p">
 							{skills[5].desc}
 						</p>
 					</div>
 				</div>
 				<div className="skills-div6 skill-div">
-					<h1>
+					<h1 className="skills-h1">
 						{skills[6].name}
 					</h1>
-					<p>
+					<p className="skills-p">
 						{skills[6].desc}
 					</p>
 				</div>
 			</div>
 		</div>
-		<Icon
-			id="icon"
-			className="section2-arrow-icon arrow2"
-			name="arrow up"
-		/>
 	</section>;
 
 export default Section2;

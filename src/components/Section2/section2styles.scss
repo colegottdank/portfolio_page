@@ -1,151 +1,247 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 
+// Section2
+$background-color: lightgreen;
+$height: 53em;
+
+// Entire skills wrapper
+$skills-height: 40em;
+$skills-width: 100%;
+
+// All skills
+$border-width: 0.7em;
+$border-color: lightgreen;
+$border-radius: 45px;
+$transition-speed: 0.35s;
+$padding: 1em;
+
+// Skill 1 & 2 wrapper
+$wrapper1-width: 60em;
+$wrapper1-height: 100%;
+
+// Skill div 1
+$skill1-height: 50%;
+$skill1-width: 100%;
+$skill1-background-color: $secondary;
+$skill1-hover: #9C77B6;
+
+// Skill div 2
+$skill2-height: 50%;
+$skill2-width: 100%;
+$skill2-background-color: $tertiary;
+$skill2-hover: #E4A92E;
+
+// Skill div 3
+$skill3-height: 100%;
+$skill3-width: 40em;
+$skill3-background-color: $primary-light;
+$skill3-hover: #72CCE5;
+
+// Skill 4, 5, & 6 wrapper
+$wrapper2-width: 100%;
+$wrapper2-height: 100%;
+
+// Skill 4 & 5 wrapper
+$wrapper3-width: 100%;
+$wrapper3-height: 100%;
+
+// Skill div 4
+$skill4-height: 100%;
+$skill4-width: 50%;
+$skill4-background-color: #ff733f;
+$skill4-hover: #E56739;
+
+// Skill div 5
+$skill5-height: 100%;
+$skill5-width: 50%;
+$skill5-background-color: pink;
+$skill5-hover: #E5ADB7;
+
+// Skill div 6
+$skill6-height: 100%;
+$skill6-width: 100%;
+$skill6-background-color: $primary;
+$skill6-hover: #3D9FCA;
+
+// Entire section2 wrapper
 .section2-wrapper {
-    background-color: lightgreen;
-    height: 56em;
-    width: 100%;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: $background-color;
+    max-height: $height;
+    min-width: 100%;
 
     @include angle(before, true, 5deg);
     @include angle(after, true, 5deg);
 
-    .arrow3 {
-        display: inline-block;
-        position: relative;
-        color: black;
-        align-self: left;
-        margin: 0 !important;
-        top: -1.2em;
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: $width;
+        height: auto;
     }
 
+    // Default icon styling
     .section2-arrow-icon {
         display: inline-block;
+        position: relative;
+        align-self: left;
+        color: black;
         font-size: 400%;
-        text-align: start;
-        margin-top: .4em;
-        margin-left: .15em !important;
+        margin: 0;
 
+        // Default icon hover styling
         &:hover {
             cursor: pointer;
             color: $primary-dark;
         }
     }
 
+    // Arrow1 overides
+    .arrow1 {
+        top: .4em;
+    }
+
+    // Arrow2 overides
+    .arrow2 {
+        bottom: 4em;
+    }
+
+    // Arrow3 overides
+    .arrow3 {
+        bottom: 4.1em;
+    }
+
+    // Wraps the skill section
     .skills-wrapper {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
+        margin-top: 5em;
         height: 58em;
         width: 100%;
         overflow: hidden;
 
+        .skills-h1 {
+            font-size: 150%;
+        }
+
+        .skills-p {
+            font-size: 100%;
+        }
+
+        // Default skill styling
         .skill-div {
-            padding: 1em;
+            padding: $padding;
+            box-sizing: border-box;
             text-align: center;
             color: black;
-            transition: border-radius .35s;
-            border: 10px solid lightgreen;
+            transition: border-radius $transition-speed;
+            border: $border-width solid $border-color;
 
             &:hover {
-                border-radius: 45px;
-                transition: .35s;
+                border-radius: $border-radius;
+                transition: $transition-speed;
                 color: white;
             }
         }
 
-        .arrow2 {
-            color: white;
-            align-self: left;
-            margin-top: 1em;
-            margin-left: .15em;
-        }
-
+        // Wraps just the skills
         .allskills-wrapper-div {
             display: flex;
-            height: 35em;
-            width: 94%;
+            height: $skills-height;
+            width: auto;
+            max-width: $skills-width;
         }
 
+        // Skill 1 & 2 wrapper
         .skills-wrapper-div1 {
             display: flex;
             flex-direction: column;
-            width: 60em;
-            height: 100%;
+            width: $wrapper1-width;
+            height: $wrapper1-height;
 
+            // Skill #1
             .skills-div {
-                height: 50%;
-                width: 100%;
-                padding: 1em;
+                height: $skill1-height;
+                width: $skill1-width;
                 background-color: $secondary;
 
                 &:hover {
-                    background-color: #9C77B6;
+                    background-color: $skill1-hover;
                 }
             }
 
+            // Skill #2
             .skills-div2 {
-                height: 50%;
-                width: 100%;
-                padding: 1em;
-                background-color: $tertiary;
+                height: $skill2-height;
+                width: $skill2-width;
+                background-color: $skill2-background-color;
 
                 &:hover {
-                    background-color: #E4A92E;
+                    background-color: $skill2-hover;
                 }
             }
         }
 
+        // Skill #3
         .skills-div3 {
-            height: 35em;
-            width: 40em;
+            height: $skill3-height;
+            width: $skill3-width;
             background-color: $primary-light;
 
             &:hover {
-                background-color: #72CCE5;
+                background-color: $skill3-hover;
             }
         }
 
+        // Skill 3, 4 & 5
         .skills-wrapper-div2 {
             display: flex;
             flex-direction: column;
-            height: 35em;
-            width: 100%;
-
-            .skill-div {
-                width: 50%;
-                height: 100%;
-            }
+            height: $wrapper2-height;
+            width: $wrapper2-width;
 
             .skills-wrapper-div3 {
                 display: flex;
-                height: 100%;
-                width: 100%;
+                height: $wrapper3-height;
+                width: $wrapper3-width;
 
                 .skills-div4 {
-                    background-color: #ff733f;
+                    background-color: $skill4-background-color;
+                    height: $skill4-height;
+                    width: $skill4-width;
 
                     &:hover {
-                        background-color: #E56739;
+                        background-color: $skill4-hover;
                     }
                 }
 
                 .skills-div5 {
-                    background-color: pink;
+                    border-right: 0;
+                    background-color: $skill5-background-color;
+                    height: $skill5-height;
+                    width: $skill5-width;
 
                     &:hover {
-                        background-color: #E5ADB7;
+                        background-color: $skill5-hover;
                     }
                 }
             }
 
             .skills-div6 {
-                width: 100%;
-                background-color: $primary;
+                border-right: 0;
+                width: $skill6-width;
+                height: $skill6-height;
+                background-color: $skill6-background-color;
 
                 &:hover {
-                    background-color: #3D9FCA;
+                    background-color: $skill6-hover;
                 }
             }
         }

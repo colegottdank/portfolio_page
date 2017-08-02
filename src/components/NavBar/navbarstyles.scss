@@ -1,64 +1,97 @@
 @import "../../styles/variables.scss";
 
+// Entire navbar wrapper
+$wrapper-width: 100%;
+
+// Logo
+$logo-height: 7.1em;
+$logo-width: 8.5em;
+
+// UL
+$ul-width: 100%;
+$ul-height: 100%;
+
+// LI
+$li-width: auto;
+$li-height: 100%;
+
+// NavLink
+$navlink-width: 100%;
+$navlink-height: 100%;
+
 // Wrapper of entire NavBar
-.navbar__nav {
-    z-index: 9999;
+.navbar-wrapper {
+    display: flex;
+    justify-content: center;
     position: fixed;
-    width: 100%;
+    z-index: 9999;
+    width: $wrapper-width;
     height: $navbar_height;
     background-color: $primary;
 
-    .logo-li {
-        border-bottom: 2px solid black;
-    }
-
-    .navbar-logo {
-        display: inline-block;
-        width: 100%;
-        height: 142%;
-    }
-
-    // ul containing li & navlink elements
-    .navroutes__wrapper__ul {
-        display: inline-flex;
-        width: 100%;
+    .navbar__nav {
+        display: flex;
+        width: $width;
         height: 100%;
-        justify-content: flex-start;
-        list-style-type: none;
-        padding: 0;
-        margin: auto;
 
-        // li which contains the NavLinks
-        .navroutes__li {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            height: 100%;
-            width: 8em;
-            text-align: center;
+        .navbar-logo {
+            display: inline-block;
+            width: $logo-width;
+            min-height: $logo-height;
+            cursor: default;
 
-            // NavLinks, youngest child
-            .navroutes--navlink {
-                display: flex;
-                height: 100%;
-                width: 100%;
-                margin: 0;
-                opacity: .7;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                color: white;
-                font-size: 150%;
-                font-weight: 300;
-
-                &:hover {
-                    opacity: .9;
-                }
+            &:hover {
+                cursor: pointer;
             }
 
-            .navroutes--navlink--active {
-                opacity: 1 !important;
-                text-decoration: underline !important;
+            &:active {
+                cursor: default;
+            }
+        }
+
+        // ul containing li & navlink elements
+        .navroutes__wrapper__ul {
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: top;
+            width: $ul-width;
+            height: $ul-height;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+            // li which contains the NavLinks
+            .navroutes__li {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                height: $li-height;
+                width: $li-width;
+                margin-right: 3em;
+
+                // NavLinks, youngest child
+                .navroutes--navlink {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    height: $navlink-height;
+                    width: $navlink-width;
+                    margin: 0;
+                    opacity: .7;
+                    text-decoration: none;
+                    color: white;
+                    font-size: 150%;
+                    font-weight: 300;
+
+                    &:hover {
+                        opacity: .9;
+                    }
+                }
+
+                .navroutes--navlink--active {
+                    opacity: 1 !important;
+                    text-decoration: underline !important;
+                }
             }
         }
     }

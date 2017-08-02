@@ -6,9 +6,16 @@ $section1-height: 45em;
 // SECTION1 WRAPPER
 .section1-wrapper {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     width: 100%;
     height: 90%;
+
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: $width;
+        height: 90%;
+    }
 
     // LEFT HALF
     .lefthalf-wrapper {
@@ -20,11 +27,12 @@ $section1-height: 45em;
         height: 100%;
 
         & img {
-            height: 112%;
-            width: 80%;
-            min-width: 40em;
-            max-width: 45em;
+            min-height: 52em;
+            max-height: 52em;
+            min-width: 43em;
+            max-width: 43em;
             z-index: 2;
+            pointer-events: none;
         }
     }
 
@@ -33,7 +41,7 @@ $section1-height: 45em;
         display: flex !important;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: flex-end;
         width: 100%;
         min-width: 25.5em;
         height: 100%;
@@ -45,7 +53,7 @@ $section1-height: 45em;
             justify-content: center;
             align-items: center;
             width: 80%;
-            height: 45%;
+            height: 50%;
             color: black;
 
             @include angle(after, false, 5deg);
@@ -103,7 +111,7 @@ $section1-height: 45em;
             justify-content: center;
             align-items: center;
             width: 80%;
-            height: 45%;
+            height: 50%;
             color: black;
             z-index: 2 !important;
 

@@ -1,0 +1,67 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+// Arrows
+$arrow-color: $primary;
+$arrow-hover: $primary-dark;
+
+// Wraps entire Section3
+.section3-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60em;
+
+    // wraps slider contents only
+    .simpleslider-wrapper {
+        display: inline-block;
+        margin: 0;
+        width: 60%;
+
+        // Arrows
+        .slick-prev:before, .slick-next:before {
+            color: $arrow-color;
+
+            &:hover {
+                color: $arrow-hover;
+            }
+        }
+
+        .slick-track {
+            display: flex;
+            height: 20em;
+        }
+
+        // Effects individual slides
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1em solid white !important;
+            box-sizing: border-box;
+        }
+
+        // Active Slide
+        .slick-center {
+            z-index: 2;
+
+            .portfolio-piece {
+                transition: 1s;
+                background-color: $secondary-dark;
+                height: 20em;
+                width: 20em;
+                z-index: 2;
+            }
+        }
+
+        // Images
+        .portfolio-piece {
+            transition: 1s;
+            width: 10em;
+            height: 10em;
+            margin: 0;
+            background-color: $secondary;
+        }
+    }
+}
