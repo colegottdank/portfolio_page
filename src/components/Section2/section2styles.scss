@@ -3,7 +3,7 @@
 
 // Section2
 $background-color: lightgreen;
-$height: 53em;
+$height: 60em;
 
 // Entire skills wrapper
 $skills-height: 40em;
@@ -79,7 +79,7 @@ $skill6-hover: #3D9FCA;
     .content-wrapper {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         width: $width;
         height: auto;
@@ -119,8 +119,7 @@ $skill6-hover: #3D9FCA;
     // Wraps the skill section
     .skills-wrapper {
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: center;
         flex-direction: column;
         margin-top: 5em;
         height: 58em;
@@ -171,10 +170,6 @@ $skill6-hover: #3D9FCA;
                 height: $skill1-height;
                 width: $skill1-width;
                 background-color: $secondary;
-
-                &:hover {
-                    background-color: $skill1-hover;
-                }
             }
 
             // Skill #2
@@ -182,10 +177,6 @@ $skill6-hover: #3D9FCA;
                 height: $skill2-height;
                 width: $skill2-width;
                 background-color: $skill2-background-color;
-
-                &:hover {
-                    background-color: $skill2-hover;
-                }
             }
         }
 
@@ -194,10 +185,6 @@ $skill6-hover: #3D9FCA;
             height: $skill3-height;
             width: $skill3-width;
             background-color: $primary-light;
-
-            &:hover {
-                background-color: $skill3-hover;
-            }
         }
 
         // Skill 3, 4 & 5
@@ -216,10 +203,6 @@ $skill6-hover: #3D9FCA;
                     background-color: $skill4-background-color;
                     height: $skill4-height;
                     width: $skill4-width;
-
-                    &:hover {
-                        background-color: $skill4-hover;
-                    }
                 }
 
                 .skills-div5 {
@@ -227,10 +210,6 @@ $skill6-hover: #3D9FCA;
                     background-color: $skill5-background-color;
                     height: $skill5-height;
                     width: $skill5-width;
-
-                    &:hover {
-                        background-color: $skill5-hover;
-                    }
                 }
             }
 
@@ -239,10 +218,6 @@ $skill6-hover: #3D9FCA;
                 width: $skill6-width;
                 height: $skill6-height;
                 background-color: $skill6-background-color;
-
-                &:hover {
-                    background-color: $skill6-hover;
-                }
             }
         }
     }

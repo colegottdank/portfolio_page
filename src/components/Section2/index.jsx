@@ -1,5 +1,4 @@
 import React from "react";
-import { Icon } from "semantic-ui-react";
 import Velocity from "velocity-animate";
 import "./section2styles.css";
 
@@ -15,26 +14,7 @@ class Section2 extends React.Component {
 		return (
 			<section className="section2-wrapper">
 			<div className="content-wrapper">
-				<Icon
-					id="icon"
-					onClick={this.scroll.bind(this, "myexpertise", -100)}
-					className="section2-arrow-icon arrow1"
-					name="arrow down"
-				/>
 				<Skills />
-				<Icon
-					id="icon"
-					className="section2-arrow-icon arrow2"
-					onClick={this.scroll.bind(this, "landing", -100)}
-					name="arrow up"
-				/>
-				<br />
-				<Icon
-					id="icon"
-					onClick={this.scroll.bind(this, "mywork")}
-					className="section2-arrow-icon arrow3"
-					name="arrow down"
-				/>
 				</div>
 			</section>
 		);

@@ -1,76 +1,83 @@
 import React from "react";
 import "./section1styles.css";
-import "semantic-ui-css/semantic.min.css";
 import img from "../../images/selfies/ColeGottdank_copy.png";
-import { Icon } from "semantic-ui-react";
+import Button from "react-md/lib/Buttons";
+import Divider from "react-md/lib/Dividers";
+import Media from "react-md/lib/Media";
 
 /*
 * Section1 contains both LeftHalf and RightHalf
 */
 const Section1 = () =>
-	<section className="section1-wrapper" id="landing">
-		<div className="content-wrapper">
-			<LeftHalf />
-			<RightHalf />
-		</div>
+	<section className="section1-wrapper md-grid" id="landing">
+		<LeftHalf />
+		<RightHalf />
 	</section>;
 
 /*
 * LeftHalf of Section1
 */
 const LeftHalf = () =>
-	<section className="lefthalf-wrapper">
-		<img
-			src={img}
-			alt="Cartoon Selfie"
-		/>
-	</section>;
+	<Media aspectRatio="16-9" forceAspect={true} className="md-cell--6 .md-cell left-half-wrapper">
+		<img src={img} alt="Cartoon Selfie" />
+	</Media>;
 
 /*
 * RightHalf of Section1
 */
 const RightHalf = () =>
-	<section className="righthalf-wrapper">
-		<RightHalfTopHalf />
-		<RightHalfBottomHalf />
-	</section>;
-
-/*
-* TopHalf section of RightHalf 
-*/
-const RightHalfTopHalf = () =>
-	<section className="righthalftophalf-wrapper">
-		<div className="righthalftophalf-div">
-			<h3>&lt;h1&gt;</h3>
-			<h1>Who am I?</h1>
-			<h3>&lt;/h1&gt;</h3>
-
-			<hr />
-			<p>
-				I'm a frontend developer who prides myself on my ability to
+	<section className="md-cell--6 .md-cell right-half-wrapper">
+		<Info
+			header="Who am I?"
+			desc="I'm a frontend developer who prides myself on my ability to
 				craft high-quality, modular, and scalable React.js code
-				utilizing CSS Modules.
-			</p>
-			<Icon name="github" target="_blank" link={true} />
-		</div>
+				utilizing CSS Modules."
+			icons={[
+				{icon: "fa fa-facebook", href: "https://www.facebook.com/cole.gottdank"},
+				{icon: "fa fa-free-code-camp", href: "https://www.freecodecamp.org/colegottdank"},
+				{icon: "fa fa-github", href: "https://www.github.com/colegottdank"},
+				{icon: "fa fa-linkedin", href: "https://www.linkedin.com/in/cole-gottdank-585123140/"},
+				{icon: "fa fa-reddit", href: "https://www.reddit.com/user/nnet3/"},
+				{icon: "fa fa-twitter", href: "https://twitter.com/colegottdank"},
+			]}
+		/>
+		<Info
+			header="My specialities"
+			desc="I specialize in crafting and optimizing all types of eCommerce
+				websites. Crafting the highest-quality website the first time
+				saves companies loads of maitence costs in the long-run."
+		/>
 	</section>;
 
 /*
-* BottomHalf section of RightHalf 
+* Info Component
 */
-const RightHalfBottomHalf = () =>
-	<section className="righthalfbottomhalf-wrapper">
-		<div className="righthalfbottomhalf-div">
+const Info = props =>
+	<section className="info-wrapper">
+		<div className="info-div">
 			<h3>&lt;h1&gt;</h3>
-			<h1>My specialities</h1>
+			<h1>
+				{props.header}
+			</h1>
 			<h3>&lt;/h1&gt;</h3>
-
-			<hr />
+			<Divider />
 			<p>
-				I specialize in crafting and optimizing all types of eCommerce
-				websites. Crafting the highest-quality website the first time
-				saves companies loads of maitence costs in the long-run.
+				{props.desc}
 			</p>
+			{props.icons !== undefined
+				? props.icons.map(icon =>
+						<Button
+							icon
+							iconClassName={icon.icon}
+							tooltipLabel={icon.icon.replace(/fa|-/g, "")}
+							tooltipPosition="bottom"
+							className="icon"
+							key={icon.icon}
+							href={icon.href}
+							target="_blank"
+						/>
+					)
+				: null}
 		</div>
 	</section>;
 

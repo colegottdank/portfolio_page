@@ -5,180 +5,84 @@ $section1-height: 45em;
 
 // SECTION1 WRAPPER
 .section1-wrapper {
-    display: flex;
-    justify-content: center;
     width: 100%;
-    height: 90%;
+    height: $section1-height;
+    padding: 0 !important;
+    align-items: flex-start;
+    justify-content: space-around;
 
-    .content-wrapper {
+    .left-half-wrapper {
         display: flex;
-        justify-content: space-between;
-        width: $width;
-        height: 90%;
-    }
-
-    // LEFT HALF
-    .lefthalf-wrapper {
-        display: flex;
-        flex-grow: 4;
-        flex-basis: 100%;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
+        justify-content: flex-end;
 
         & img {
-            height: 52em;
-            width: 43em;
+            max-height: 53em;
+            max-width: 45em;
+            margin-left: auto;
             z-index: 2;
             pointer-events: none;
         }
     }
 
-    // RIGHT HALF
-    .righthalf-wrapper {
-        display: flex !important;
+    .right-half-wrapper {
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-end;
-        width: 100%;
-        min-width: 25.5em;
-        height: 100%;
+        align-items: flex-start;
+        height: 85%;
+        z-index: 2;
 
-        // RIGHT HALF TOP HALF
-        .righthalftophalf-wrapper {
+        .info-wrapper {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            width: 80%;
+            text-align: center;
             height: 50%;
-            color: black;
-
-            @include angle(after, false, 5deg);
+            width: 85%;
 
             &:hover {
                 background-color: #ff733f;
-                color: white;
+                color: white !important;
 
-                & hr {
-                    border: 1px solid white;
+                h1, h3, p {
+                    color: white;
                 }
+
+                hr {
+                    background-color: white;
+                }
+
+                @include angle(after, false, 5deg);
             }
 
-            .righthalftophalf-div {
-                display: block;
-                text-align: center;
-
-                & h3 {
-                    display: inline-block;
-                    margin: 0;
-                    padding: 0;
-                    font-size: 125%;
-                }
-
-                & h1 {
-                    display: inline-block;
-                    margin: 0;
-                    padding: 0;
-                    font-size: 175%;
-                }
+            .info-div {
+                padding: 5em;
             }
 
-            & hr {
-                width: 30%;
-                border: 1px solid black;
+            & h1 {
+                display: inline-block;
+                color: black;
+                margin-bottom: .2em;
+            }
+
+            & h3 {
+                display: inline-block;
+                color: grey;
+                margin: 0;
+                margin-bottom: .2em;
             }
 
             & p {
                 display: block;
-                margin: 0 1em;
-                padding: 0;
-                text-align: center;
-                word-wrap: break-word;
-            }
-
-            & a {
-                font-size: 250%;
+                margin: 0;
+                margin-top: .5em;
             }
         }
 
-        // RIGHT HALF BOTTOM HALF
-        .righthalfbottomhalf-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            height: 50%;
-            color: black;
-            z-index: 2 !important;
-
+        .icon {
             &:hover {
-                background-color: #ff733f;
                 color: white;
-
-                & hr {
-                    border: 1px solid white !important;
-                    box-shadow: 0;
-                }
-            }
-
-            @include angle(after, false, 5deg);
-
-            .righthalfbottomhalf-div {
-                display: block;
-                text-align: center;
-
-                & h3 {
-                    display: inline-block;
-                    margin: 0;
-                    padding: 0;
-                    font-size: 125%;
-                }
-
-                & h1 {
-                    display: inline-block;
-                    margin: 0;
-                    padding: 0;
-                    font-size: 175%;
-                }
-
-                & hr {
-                    width: 30%;
-                    border: 1px solid black;
-                }
-
-                & p {
-                    display: block;
-                    margin: 0 1em !important;
-                    padding: 0;
-                    text-align: center;
-                    word-wrap: break-word;
-                }
-
-                & a {
-                    font-size: 250%;
-                }
             }
         }
     }
 }
 
-@media only screen and (max-width: $media-query) {
-    .section1-wrapper {
-        .content-wrapper {
-            flex-direction: column !important;
-        }
-
-        & img {
-            width: 21em !important;
-            height: 23em !important;
-        }
-
-        .righthalf-wrapper {
-            justify-content: center;
-            align-items: center;
-            z-index: 3;
-        }
-    }
-}
+@media only screen and (max-width: $media-query) {}
